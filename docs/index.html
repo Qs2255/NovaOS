@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NovaOS — Open Source Mobile OS</title>
+  <meta name="description" content="NovaOS — an open-source, privacy-first mobile operating system built for transparency, security, and complete user control." />
+  <meta name="author" content="NovaOS Project" />
+
+  <style>
+    :root{
+      --bg:#071018;
+      --card:#0f1b23;
+      --accent:#40d0d9;
+      --muted:#9fb3b7;
+      --text:#e9f6f7;
+      --glass: rgba(255,255,255,0.03);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#06121a 0%, #07151b 60%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+    }
+
+    .container{
+      width:100%;
+      max-width:980px;
+      background:linear-gradient(180deg,var(--card), rgba(10,20,25,0.9));
+      border-radius:14px;
+      padding:36px;
+      box-shadow:0 8px 30px rgba(4,10,14,0.6);
+      border:1px solid rgba(64,208,217,0.06);
+    }
+
+    header{display:flex;align-items:center;gap:18px}
+    .logo{
+      width:72px;height:72px;border-radius:14px;
+      background:linear-gradient(135deg, rgba(64,208,217,0.12), rgba(64,208,217,0.04));
+      display:flex;align-items:center;justify-content:center;
+      border:1px solid rgba(64,208,217,0.08);
+      box-shadow:inset 0 -6px 14px rgba(0,0,0,0.35);
+      font-weight:700;color:var(--accent);
+      font-size:26px;
+    }
+    h1{margin:0;font-size:28px;letter-spacing:-0.02em}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:22px;
+      margin-top:26px;
+    }
+
+    .panel{
+      background:var(--glass);
+      border-radius:12px;
+      padding:18px;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+
+    .about{
+      line-height:1.6;
+      color:var(--muted);
+    }
+
+    .cta{
+      margin-top:16px;display:flex;gap:12px;flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:10px 14px;border-radius:10px;text-decoration:none;
+      font-weight:600;background:transparent;border:1px solid rgba(255,255,255,0.04);
+      color:var(--text);
+    }
+    .btn.primary{
+      background:linear-gradient(90deg,var(--accent), #2bd6d9);
+      color:#041516;border:0;
+      box-shadow:0 6px 18px rgba(64,208,217,0.12);
+    }
+
+    .list{display:flex;flex-direction:column;gap:12px;margin:0;padding:0;list-style:none}
+    .item{display:flex;justify-content:space-between;align-items:center}
+    .item .meta{color:var(--muted);font-size:13px}
+
+    footer{margin-top:22px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center}
+    @media (max-width:800px){
+      .grid{grid-template-columns:1fr; }
+      .logo{width:62px;height:62px;font-size:22px}
+    }
+  </style>
+</head>
+<body>
+  <main class="container" role="main">
+    <header>
+      <div class="logo">N</div>
+      <div>
+        <h1>NovaOS</h1>
+        <p class="lead">Open-source mobile OS — privacy first, user owned.</p>
+      </div>
+    </header>
+
+    <div class="grid" aria-live="polite">
+      <section class="panel about" aria-labelledby="about-title">
+        <h2 id="about-title" style="margin-top:0;color:var(--accent)">What is NovaOS</h2>
+        <p>
+          NovaOS is a community-driven operating system for mobile devices built from a Linux foundation with a secure sandbox for running Android apps when needed. It is designed for transparency, security, and complete user control — no ads, no trackers, no hidden telemetry.
+        </p>
+
+        <div class="cta">
+          <a class="btn primary" href="https://github.com/NovaOS-Project" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn" href="README.md">Read the README</a>
+          <a class="btn" href="VISION.md">Our Vision</a>
+        </div>
+
+        <h3 style="margin-top:18px;color:var(--accent)">Highlights</h3>
+        <ul style="color:var(--muted);line-height:1.6">
+          <li>Privacy by design — telemetry disabled by default</li>
+          <li>Safe, auditable root access under user control</li>
+          <li>Android APK compatibility via isolated runtime</li>
+          <li>Reproducible builds and community governance</li>
+        </ul>
+      </section>
+
+      <aside class="panel" aria-labelledby="get-started-title">
+        <h3 id="get-started-title" style="margin-top:0;color:var(--accent)">Get started</h3>
+
+        <ul class="list" aria-hidden="false">
+          <li class="item">
+            <div>
+              <strong>Clone the repo</strong>
+              <div class="meta">Fork & clone to begin contributing</div>
+            </div>
+            <div><code>git clone https://github.com/NovaOS-Project/NovaOS.git</code></div>
+          </li>
+
+          <li class="item">
+            <div>
+              <strong>Read docs</strong>
+              <div class="meta">See README, CONTRIBUTING, and ROADMAP</div>
+            </div>
+            <div><a class="btn" href="docs/README.md">Docs</a></div>
+          </li>
+
+          <li class="item">
+            <div>
+              <strong>Join discussions</strong>
+              <div class="meta">Open issues, suggest ideas, help triage</div>
+            </div>
+            <div><a class="btn" href="https://github.com/NovaOS-Project/NovaOS/issues">Issues</a></div>
+          </li>
+
+          <li class="item">
+            <div>
+              <strong>Report security issues</strong>
+              <div class="meta">Responsible disclosure welcomed</div>
+            </div>
+            <div><a class="btn" href="security/README.md">Security</a></div>
+          </li>
+        </ul>
+
+        <footer>
+          <div>License: GPL-3.0</div>
+          <div>© NovaOS Project</div>
+        </footer>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>
